@@ -41,10 +41,13 @@ def get_count(request: Request):
         save_count(count, viewed_ips)
     return {"total_requests": count}
 
-# Serve index.html
 @app.get("/")
 def read_root():
     return FileResponse("index.html")
+
+@app.get("/home")
+def read_root():
+    return FileResponse("home.html")
 
 # Serve other static files
 @app.get("/{file_path:path}")
