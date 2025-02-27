@@ -243,6 +243,7 @@ body {
     line-height: 1.5;
     text-align: center;
     filter: drop-shadow(#ffffff 1px 0 7px)!important;
+    height: 50px;
 }
 
 /* bio setup */
