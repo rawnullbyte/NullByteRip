@@ -95,7 +95,7 @@ function typeWriter() {
         }
     }
 }
-removeOverlay();
+
 typeWriter();
 });
 });

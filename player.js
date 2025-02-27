@@ -20,14 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load a song
     function loadSong(index) {
+        const wasPlaying = !audio.paused;
         audio.src = songs[index].file;
         songTitle.textContent = songs[index].title;
         audio.load();
+        if (wasPlaying) {
+            audio.play().then(() => {
+                playButton.textContent = '⏸';  // Pause symbol
+            });
+        } else {
+            playButton.textContent = '\u25B6';  // Play symbol (▶)
+        }
     }
 
     // Toggle play/pause
     function togglePlay() {
-        if (audio.paused) {
+        if (audio.paused) { 
             audio.play();
             playButton.textContent = '⏸';  // Pause symbol
         } else {
@@ -40,16 +48,18 @@ document.addEventListener("DOMContentLoaded", function () {
     function nextSong() {
         songIndex = (songIndex + 1) % songs.length;
         loadSong(songIndex);
-        audio.play();
-        playButton.textContent = '⏸';
+        audio.play().then(() => {
+            playButton.textContent = '⏸';  // Pause symbol
+        });
     }
 
     // Previous song
     function prevSong() {
         songIndex = (songIndex - 1 + songs.length) % songs.length;
         loadSong(songIndex);
-        audio.play();
-        playButton.textContent = '⏸';
+        audio.play().then(() => {
+            playButton.textContent = '⏸';  // Pause symbol
+        });
     }
 
     // Update progress bar
