@@ -1,100 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>nullbyte.rip</title>
-    <meta name="theme-color" content="#000001">
-    <link rel="stylesheet" href="style.css">
-    <meta content="NullByte's bio" property="og:title" />
-    <meta content="Hai~ :3" property="og:description" />
-    <meta content="https://cdn.discordapp.com/avatars/1224779999303827549/0e45804e4cd2dfb2d010267a37c455b2.webp" property="og:image" />
-    <meta content="#000001" data-react-helmet="true" name="theme-color" />
-    <script src="effects.js"></script>
-    <script src="player.js"></script>
-    <script src="views.js"></script>
+  <title> c49</title>
 </head>
-
-<body>
-    <!-- <div id="overlay">
-        <button class="overlaybtn" onclick="removeOverlay()">𝖊𝖓𝖙𝖊𝖗</button>
-    </div> -->
-
-    <div id="user-page">
-        <nav class="navigation">
-
-            <a href="/home" class="category-button">Home</a>
-        </nav>
-        
-        
-        <img class="background" src="https://r2.guns.lol/a1de1f50-e88d-481b-8002-5c26de8ea58a.png" draggable="false" style="object-fit: cover;">
-
-        <div class="main-container" id="mainDiv">
-            <div class="profile-container">
-                <img class="pp" src="https://cdn.discordapp.com/avatars/1224779999303827549/0e45804e4cd2dfb2d010267a37c455b2.webp?size=1024" draggable="false">
-                <p class="username breathing" data-tooltip="Tired of life">NullByte</p>
-
-                <div class="badges-container">
-                    <div class="badges pic-badge" id="prem" data-tooltip="Bug Hunter" style="background-image: url('https://cdn.jsdelivr.net/gh/merlinfuchs/discord-badges@master/PNG/bug_hunter_level_1.png');"></div>
-                    <div class="badges pic-badge" id="own" data-tooltip="Moderator" style="background-image: url('https://cdn.jsdelivr.net/gh/merlinfuchs/discord-badges@master/PNG/certified_moderator.png');" bis_skin_checked="1"></div>
-                    <div class="badges pic-badge" id="early" data-tooltip="Hypesquad Events" style="background-image: url('https://cdn.jsdelivr.net/gh/merlinfuchs/discord-badges@master/PNG/hypesquad_events.png');"></div>
-                    <div class="badges pic-badge" id="early" data-tooltip="Nitro" style="background-image: url('https://cdn.jsdelivr.net/gh/merlinfuchs/discord-badges@master/PNG/nitro.png');"></div>
-                    <div class="badges pic-badge" id="early" data-tooltip="Partner" style="background-image: url('https://cdn.jsdelivr.net/gh/merlinfuchs/discord-badges@master/PNG/partnered_server_owner.png');"></div>
-                    <div class="badges pic-badge" id="early" data-tooltip="Staff" style="background-image: url('https://cdn.jsdelivr.net/gh/merlinfuchs/discord-badges@master/PNG/staff.png');"></div>
-                </div>
-                <div class="bio-container">
-                    <div class="bio typewriter"></div>
-                </div>
-
-                <div class="text-container">
-                    <p class="bio-text">
-                        - 💱 Languages: <a href="https://learn.javascript.ru/" class="badge-link"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" alt="JavaScript"/></a> and <a href="https://pythontutor.ru/" class="badge-link"><img src="https://img.shields.io/badge/Python-0000FF?style=flat&logo=Python&logoColor=white" alt="Python"/></a><br>
-                        - ⛩ Owner of <a href="https://dsc.gg/hackysoft" class="project-link">HackySoft</a> and <a href="https://dsc.gg/zenithvm" class="project-link">ZenithVM</a><br>
-                        - 📂 Projects: <a href="https://discord.com/oauth2/authorize?client_id=1329082436663115808" class="project-link">Yukari</a>, <span class="project-text">HackyShark</span>
-                    </p>  
-                </div>
-
-                <div class="links-container" id="linksDiv">
-                    <div class="logo discord" id="ig" onclick="window.open('http://discord.com/users/1224779999303827549', '_blank');">
-                        <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" class="links" style="object-fit: contain;">
-                    </div>
-                    <div class="logo instagram" id="ig" onclick="window.open('https://instagram.com/rawnullbyte', '_blank');">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" class="links">
-                    </div>
-                    <div class="logo telegram" id="tele" onclick="window.open('https://t.me/andrexyoutube', '_blank');">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/2048px-Telegram_logo.svg.png" class="links">
-                    </div>
-                </div>
-
-                <div class="player">
-                    <div class="cover-art"></div>
-                    <div class="song-info">
-                        <span id="songTitle">Loading...</span>
-                    </div>
-                    <div class="progress-container" id="progressContainer">
-                        <div class="progress-bar" id="progress"></div>
-                    </div>
-                    <div class="time">
-                        <span id="currentTime">0:00</span>
-                        <span id="duration">0:00</span>
-                    </div>
-                    <div class="controls">
-                        <button id="prevButton">⏮</button>
-                        <button id="playButton">▶</button>
-                        <button id="nextButton">⏭</button>
-                    </div>
-                </div>
-                
-                <audio id="audio"></audio>
-                <div class="views-container">
-                    <svg viewBox="0 0 24 24" width="25" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0" style="margin-bottom: -3px;"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M3 14C3 9.02944 7.02944 5 12 5C16.9706 5 21 9.02944 21 14M17 14C17 16.7614 14.7614 19 12 19C9.23858 19 7 16.7614 7 14C7 11.2386 9.23858 9 12 9C14.7614 9 17 11.2386 17 14Z" stroke="#c18be0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    <span id="view-count">500</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<body id="body" onload="bodyLoad()">
+  <h1>shrine</h1>
+  <p> nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida  nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida nahida 
+</p>
+<button onclick="changeTheme()" id="btn"> change theme </button>
+<h2> i llove nnahida  (real)</h2>
+<img id="img_1" src="https://asset.vg247.com/genshin-impact-nahida-weapon.jpg/BROK/resize/1920x1920%3E/format/jpg/quality/80/genshin-impact-nahida-weapon.jpg">
+  <p> live laugh love nahida </p>
+<img src="https://cdn1.dotesports.com/wp-content/uploads/2022/11/01114706/nahida.jpg">
+  <h3> nahida amazing /srs</h3>
+<img src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/genshin-impact/c/c9/Nahida_Winking.png">
 </body>
-
+<style>
+    body{
+        body{
+  background-color:#daecd6;
+  text-align:center;}
+h1{
+color:#3c6d4c;
+border-style:solid;
+border-color:#5f8359
+border-width:2px;
+padding:5px;}
+p{
+color:#3c6d4c;
+padding:5px;}
+h2{
+color:#3c6d4c;
+border-style:solid;
+border-color:#5f8359
+border-width:2px;
+padding:5px;}
+h3{
+color:#3c6d4c;
+border-style:solid;
+border-color:#5f8359
+border-width:2px;
+padding:5px;}
+img{
+    width:50%;
+    length:50%;
+    border-style:solid;
+    border-color:#5f8359;}
+</style>
 </html>
